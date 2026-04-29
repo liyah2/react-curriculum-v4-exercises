@@ -15,10 +15,10 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// (Adding an empty array allowed the useEffect to stop running on every render. Since it had nothing to depend on it kept running. Adding the empty array allowed it to run only once. )
