@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import './Lesson07Styles.css';
+import { getPosts } from './api';
 
 export default function FetchOnRender() {
   return (
