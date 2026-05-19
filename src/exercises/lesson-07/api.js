@@ -30,6 +30,7 @@ export function getPosts() {
   // You may delete this comment once you've finished the implementation.
   // eslint-disable-next-line no-unused-vars
   const url = POSTS_ENDPOINT;
+  return fetch(url).then((response) => response.json());
 }
 
 /**
@@ -51,4 +52,6 @@ export function getSinglePost(postId) {
   // You may delete this comment once you've finished the implementation.
   // eslint-disable-next-line no-unused-vars
   const url = `${POSTS_ENDPOINT}${postId}`;
+
+  return fetch(url).then((response) => response.json());
 }
