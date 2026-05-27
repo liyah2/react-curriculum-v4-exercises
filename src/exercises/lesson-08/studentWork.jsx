@@ -10,6 +10,7 @@ import {
 import BookStats from './BookStats.jsx';
 import BookList from './BookList.jsx';
 import styles from './StudentWork.module.css';
+import { use } from 'react';
 
 // Main Dashboard Component - Contains performance issues to be optimized
 export default function StudentWork() {
@@ -30,13 +31,13 @@ export default function StudentWork() {
 
   // TODO #2: Optimize this favorite toggle handler with useCallback
   // This function is recreated on every render, causing BookCard re-renders
-  const handleToggleFavorite = (bookId) => {
+  const handleToggleFavorite = useCallback((bookId) => {
     setFavorites((prev) =>
       prev.includes(bookId)
         ? prev.filter((id) => id !== bookId)
         : [...prev, bookId]
     );
-  };
+  }, []);
 
   const handleGenreToggle = (genre) => {
     setSelectedGenres((prev) =>
